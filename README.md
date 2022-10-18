@@ -13,6 +13,9 @@ Example (Ians talk at FUTO): Wait until `streamlink stream-link` gives you a URL
 
 Follow the prompts. The stream should get inserted with about 15 minutes delay.
 
+[Streamlink](https://streamlink.github.io/) is a tool that reads the sites of known streaming sites and
+returns a link that can be used from streaming software.
+
 
 Notes on camera-input
 ---------------------
