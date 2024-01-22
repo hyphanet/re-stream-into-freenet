@@ -7,9 +7,14 @@ Re-Stream a live-stream as live-audio
 
 Needs ffmpeg and `pip3 install --user pyFreenet3`.
 
-Example (Ians talk at FUTO): Wait until `streamlink stream-link` gives you a URL. Then call
+Example with theradio.cc:
 
-    ./re-stream-to-freenet.sh futo-freenet "$(streamlink https://www.youtube.com/watch?v=eoV9amsnaQg 480p --stream-url)" $(((3 * 60 * 60)))
+    cd /tmp && \
+    git clone https://github.com/hyphanet/re-stream-into-freenet && \
+    cd re-stream-into-freenet && \
+    echo -e "\n1\n" | ./re-stream-to-freenet.sh theradiocc \
+      "http://ogg.theradio.cc/" $(((3 * 24 * 60 * 60))) \
+      "The Radio.cc: theradio.cc"
 
 Follow the prompts. The stream should get inserted with about 15 minutes delay.
 
