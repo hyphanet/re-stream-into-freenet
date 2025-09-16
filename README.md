@@ -7,7 +7,17 @@ Re-Stream a live-stream as live-audio
 
 Needs ffmpeg and `pip3 install --user pyFreenet3`.
 
-Example with theradio.cc:
+Example with theradio.cc using an existing hyphanet node (install [from hyphanet.org](https://www.hyphanet.org):
+
+    cd /tmp && \
+    git clone https://github.com/hyphanet/re-stream-into-freenet && \
+    re-stream-into-freenet/hyphastream-single-node.sh theradiocc \
+      "http://ogg.theradio.cc/" $(((3 * 24 * 60 * 60))) \
+      "The Radio.cc: theradio.cc"
+
+It should just work.
+
+Example with automatic setup of multiple hyphanet nodes:
 
     cd /tmp && \
     git clone https://github.com/hyphanet/re-stream-into-freenet && \
