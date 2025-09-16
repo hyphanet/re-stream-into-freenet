@@ -142,7 +142,7 @@ EOF
 # use highest sane priority, because this insert to a USK also checks
 # for the highest version and adds indexing metadata (date hints).
 fcpupload -H $HOST -P $PORT -e -p 2 "${INDEXURI}index.html" "index.html"  >/dev/null 2>&1 &
-echo ${HOST}:8888/freenet:${INDEXPUB}
+echo http://${HOST}:8888/freenet:${INDEXPUB}
 echo You can check whether the upload is done at ${HOST}:${PORT}/uploads/
 echo To update the site, use this script again and pass it the secret key:
 echo "    $0 '$1' '$2' '$3' '$4' '${INDEXKEY}'" >&2
