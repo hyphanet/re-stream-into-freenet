@@ -18,9 +18,22 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+VERSION=0.1
+
+while getopts -- V-: OPT; do
+  if [ "$OPT" = "-" ]; then
+    OPT="$OPTARG" # replace opt by long opt
+  fi
+  case "$OPT" in
+    V | version ) echo $VERSION; exit 0 ;;
+    \? ) exit 2 ;; # illegal option
+    * ) echo "unknown option --$OPTARG"; exit 2 ;;
+  esac
+done
+shift $((OPTIND-1))
 
 if test -z $1 || test -z $2 || test -z $3 || test -z $4; then
-    echo "usage: $0 <prefix> <streamlink> <streamtime-seconds> <title> [<secret key>]"
+    echo "usage: $0 [-V | --version] <prefix> <streamlink> <streamtime-seconds> <title> [<secret key>]"
     echo
     echo "The secret key must be an SSK and must end with a slash (/). It is only used for the auto-generated streaming-page."
     echo
