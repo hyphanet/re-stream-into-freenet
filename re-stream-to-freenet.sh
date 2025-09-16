@@ -55,7 +55,7 @@ cd node1
 echo === 
 echo follow the prompts
 echo ===
-java -jar ../freenet-installer.jar -console
+echo 1 | java -jar ../freenet-installer.jar -console
 ./run.sh stop
 # setting up default settings and restarting
 cat > freenet.ini <<EOF
